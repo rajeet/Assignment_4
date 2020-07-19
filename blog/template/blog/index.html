@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block main_content %}
+    {% for i in data %}
+    <div class="card">
+        <h3 class="card-title"># {{ i.blog_title }}</h3>
+            <p class="card-detail">{{ i.blog_data|slice:":180" }}.....</p>
+            <a href="{% url 'blog:detail' i.id%}" class="readmore">Click for More!!!</a>
+            <p class="createdat">{{i.created_at}}</p>
+
+    </div>
+    {% endfor %}
+{% endblock %}
+
+
+</body>
+</html>
